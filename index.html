@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script src="riffwave.js"></script>
+<script type="text/javascript">
+$(function(){
+var sine = [];
+for (var j=0;j<8;j++){
+	for (var i=j*1000; i<j*1000+1000; i++){
+		sine[i] = (120+j)+Math.round(128*Math.sin(i/5));
+	}
+}
+var wave2 = new RIFFWAVE(sine);
+var audio2 = new Audio(wave2.dataURI);
+audio2.play(); // some noise
+});
+</script>
+</head>
+
+<body>
+
+</body>
+</html>
